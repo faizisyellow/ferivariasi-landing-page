@@ -5,11 +5,7 @@ interface ThumbnailProps {
 }
 
 const Thumbnail: FC<ThumbnailProps> = ({ children }) => {
-  return (
-    <section title="thubmnail" id="thumbnail">
-      {children}
-    </section>
-  );
+  return <section>{children}</section>;
 };
 
 export default Thumbnail;
