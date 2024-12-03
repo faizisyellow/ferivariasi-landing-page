@@ -1,19 +1,19 @@
 export const links = [
   {
     label: "link 1",
-    link: "link",
+    hash: "link",
   },
   {
     label: "link 2",
-    link: "link",
+    hash: "link",
   },
   {
     label: "link 3",
-    link: "link",
+    hash: "link",
   },
   {
     label: "Learn More",
-    link: "link",
+    hash: "link",
     isCta: true,
   },
 ];

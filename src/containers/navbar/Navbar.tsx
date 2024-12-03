@@ -1,17 +1,18 @@
-import React, { FC, ReactNode } from "react";
+import NavLink from "@/components/navLink";
+import React, { FC } from "react";
+import { links } from "./data";
 
-interface NavbarProps {
-  children: ReactNode;
-}
+interface NavbarProps {}
 
-const Navbar: FC<NavbarProps> = ({ children }) => {
+const Navbar: FC<NavbarProps> = () => {
   return (
     <nav
       title="navbar"
       id="navbar"
       className="sticky flex items-center justify-between bg-primary text-white px-6"
     >
-      {children}
+      <div>Logo</div>
+      <NavLink items={links} />
     </nav>
   );
 };

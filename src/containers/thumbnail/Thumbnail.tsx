@@ -1,11 +1,9 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 
-interface ThumbnailProps {
-  children: ReactNode;
-}
+interface ThumbnailProps {}
 
-const Thumbnail: FC<ThumbnailProps> = ({ children }) => {
-  return <section>{children}</section>;
+const Thumbnail: FC<ThumbnailProps> = ({}) => {
+  return <section>Thumbnail</section>;
 };
 
 export default Thumbnail;
