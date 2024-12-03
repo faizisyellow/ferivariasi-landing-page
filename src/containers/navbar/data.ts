@@ -1,19 +1,19 @@
 export const links = [
   {
-    label: "link 1",
-    hash: "link",
+    label: "About",
+    hash: "#about",
   },
   {
-    label: "link 2",
-    hash: "link",
+    label: "Service",
+    hash: "#service",
   },
   {
-    label: "link 3",
-    hash: "link",
+    label: "Testimonial",
+    hash: "#testimonial",
   },
   {
-    label: "Learn More",
-    hash: "link",
+    label: "Hubungi Admin",
+    hash: "#link",
     isCta: true,
   },
 ];

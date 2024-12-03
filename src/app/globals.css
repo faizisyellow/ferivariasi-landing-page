@@ -81,3 +81,9 @@ h1 {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .background-image {
+    @apply bg-[url('/a-pic.jpg')] bg-cover;
+  }
+}
