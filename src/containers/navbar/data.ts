@@ -1,14 +1,14 @@
 export const links = [
   {
-    label: "About",
+    label: "Tentang Kami",
     hash: "#about",
   },
   {
-    label: "Service",
+    label: "Layanan",
     hash: "#service",
   },
   {
-    label: "Testimonial",
+    label: "Testimoni",
     hash: "#testimonial",
   },
   {

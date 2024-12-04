@@ -14,20 +14,19 @@ interface NavLinkProps {
 
 const NavLink: FC<NavLinkProps> = ({ items }) => {
   return (
-    <ul className="flex gap-x-6 items-center py-4">
+    <ul className="flex items-center py-4">
       {items.map((link, index) => (
         <>
-          <li key={index} className="hover:font-medium">
-            {link.isCta ? (
-              <Link
-                href={link.hash}
-                className={buttonVariants({ variant: "ghost" })}
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <Link href={link.hash}>{link.label}</Link>
-            )}
+          <li key={index}>
+            <Link
+              href={link.hash}
+              className={buttonVariants({
+                variant: link.isCta ? "ghost" : "link",
+              })}
+              style={link.isCta ? { marginLeft: "1rem" } : undefined}
+            >
+              {link.label}
+            </Link>
           </li>
         </>
       ))}
