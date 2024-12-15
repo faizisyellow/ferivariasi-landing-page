@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { CSSProperties, FC, ReactNode } from "react";
 
 interface BoxProps {
   children: ReactNode;
@@ -6,6 +6,7 @@ interface BoxProps {
   id?: string;
   overflowX?: boolean;
   backgroundColor?: string;
+  style?: CSSProperties | undefined;
 }
 
 const Box: FC<BoxProps> = ({
@@ -14,9 +15,11 @@ const Box: FC<BoxProps> = ({
   overflowX,
   id,
   backgroundColor,
+  style
 }) => {
   return (
     <div
+      style={style}
       id={id}
       className={`grid place-items-center py-20 
         ${!overflowX ? "mx-6" : ""}

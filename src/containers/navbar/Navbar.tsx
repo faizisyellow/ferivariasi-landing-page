@@ -19,7 +19,7 @@ const Navbar: FC<NavbarProps> = () => {
   return (
     <motion.nav
       id="navbar"
-      className={`top-0 sticky flex items-center justify-between z-50 h-max text-white px-6
+      className={`top-0 fixed w-full flex items-center justify-between z-50 h-max text-white px-6
         ${scrollY >= 5 ? "bg-primary ease-in duration-150" : ""}
         `}
       initial="hidden"

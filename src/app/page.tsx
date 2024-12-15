@@ -1,5 +1,4 @@
 import Box from "@/components/box";
-import HeroSection from "@/containers/heroSection";
 import Navbar from "@/containers/navbar";
 import Thumbnail from "@/containers/thumbnail";
 import Image from "next/image";
@@ -7,10 +6,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <HeroSection>
-        <Navbar />
-        <Thumbnail />
-      </HeroSection>
+      <Navbar />
+      <Thumbnail />
       <Box title="Tentang Kami" id="TentangKami">
         <div className="flex w-full justify-center gap-x-8 flex-wrap sm:flex-nowrap">
           <p id="about" className="w-full">
