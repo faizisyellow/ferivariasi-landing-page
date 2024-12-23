@@ -1,7 +1,5 @@
 "use client";
 
-import Box from "@/components/box";
-import { motion } from "motion/react";
 import Testimonial, { testimonialsData } from "@/components/testimonial/Testimonial";
 import React from "react";
 
@@ -17,7 +15,10 @@ const Reviews: React.FC<ReviewsProps> = () => {
       <div className="relative">
         <div className="flex overflow-x-scroll gap-6 pb-6 mb-4 scrollbar-thin scrollbar-thumb-purple-500/20 scrollbar-track-transparent">
           {testimonialsData.map((testimonial, index) => (
-            <Testimonial {...testimonial} />
+            <Testimonial
+              {...testimonial}
+              key={index}
+            />
           ))}
         </div>
       </div>

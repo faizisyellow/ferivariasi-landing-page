@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { FC } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FaSquareWhatsapp } from "react-icons/fa6";
 
 interface ThumbnailProps {}
 

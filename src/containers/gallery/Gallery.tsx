@@ -4,7 +4,7 @@ import React from "react";
 
 interface GalleryProps {}
 
-const Gallery: React.FC<GalleryProps> = (props) => {
+const Gallery: React.FC<GalleryProps> = ({}) => {
   return (
     <Box title="Galeri">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">

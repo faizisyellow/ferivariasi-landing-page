@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { links as items } from "./data";
-import { buttonVariants } from "@/components/ui/button";
 import NavLink from "@/components/navLink";
 import Link from "next/link";
 
