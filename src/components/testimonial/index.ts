@@ -1,3 +1,3 @@
-import { testimonials } from "./Testimonial";
+import Testimonial from "./Testimonial";
 
-export default testimonials;
+export default Testimonial;
