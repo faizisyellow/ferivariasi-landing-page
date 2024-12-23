@@ -10,26 +10,28 @@ export type Link = {
 };
 
 interface NavLinkProps {
-  items: Link[];
+  items: Link;
+  onOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavLink: FC<NavLinkProps> = ({ items }) => {
+const NavLink: FC<NavLinkProps> = ({ items, onOpen }) => {
   return (
-    <ul className="flex items-center py-4">
-      {items.map((link) => (
-        <li key={link.id}>
-          <Link
-            href={link.hash}
-            className={buttonVariants({
-              variant: link.isCta ? "ghost" : "link",
-            })}
-            style={link.isCta ? { marginLeft: "1rem" } : undefined}
-          >
-            {link.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <li>
+      <Link
+        href={items.hash}
+        className={buttonVariants({
+          variant: items.isCta ? "ghost" : "link",
+          className: "text-xl sm:text-[16px] text-white",
+        })}
+        onClick={() => {
+          if (onOpen) {
+            onOpen(false);
+          }
+        }}
+      >
+        {items.label}
+      </Link>
+    </li>
   );
 };
 

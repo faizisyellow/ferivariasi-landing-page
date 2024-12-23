@@ -1,33 +1,93 @@
 "use client";
+
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import { Menu, X } from "lucide-react";
+import { links as items } from "./data";
+import { buttonVariants } from "@/components/ui/button";
 import NavLink from "@/components/navLink";
-import React, { FC } from "react";
-import { links } from "./data";
-import useScrollY from "@/hooks/useScrollY";
-import { easeIn, motion } from "motion/react";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import Link from "next/link";
 
 interface NavbarProps {}
 
-const Navbar: FC<NavbarProps> = () => {
-  const scrollY = useScrollY();
-  const menuIcon = useMediaQuery("(max-width: 750px)");
-  const animateNav = {
+const Navbar: React.FC<NavbarProps> = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navVariants = {
     hidden: { y: -20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.4, easeIn } },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.4 } },
+  };
+
+  const menuVariants = {
+    hidden: { opacity: 0, x: "100%" },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
 
   return (
     <motion.nav
       id="navbar"
-      className={`top-0 fixed w-full flex items-center justify-between z-50 h-max text-white px-6
-        ${scrollY >= 5 ? "bg-primary ease-in duration-150" : ""}
-        `}
+      className={`fixed top-0 w-full z-50 ${scrollY >= 5 ? "bg-primary ease-in duration-150" : ""}`}
       initial="hidden"
       animate="visible"
-      variants={animateNav}
+      variants={navVariants}
     >
-      <div>Logo</div>
-      {menuIcon ? "mobile" : <NavLink items={links} />}
+      <div className="flex items-center justify-between px-6 py-4">
+        <Link
+          href={"/"}
+          className="text-white no-underline"
+        >
+          Logo
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:block">
+          <ul className="flex items-center gap-2">
+            {items.map((link) => (
+              <NavLink
+                key={link.id}
+                items={link}
+              />
+            ))}
+          </ul>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 sm:hidden bg-primary pt-20"
+          initial="hidden"
+          animate="visible"
+          variants={menuVariants}
+        >
+          <ul className="flex flex-col items-center gap-6 pt-8">
+            {items.map((link) => (
+              <NavLink
+                key={link.id}
+                items={link}
+                onOpen={setIsOpen}
+              />
+            ))}
+          </ul>
+        </motion.div>
+      )}
     </motion.nav>
   );
 };
