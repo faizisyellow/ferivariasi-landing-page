@@ -6,7 +6,7 @@ const nextConfig = {
   eslint: {
     ignoreBuildErrors: true,
   },
-  basePath: "ferivariasi-landing-page",
+  basePath: "/ferivariasi-landing-page",
 };
 
 export default nextConfig;
