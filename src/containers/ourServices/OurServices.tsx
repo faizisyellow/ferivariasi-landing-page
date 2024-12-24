@@ -24,12 +24,16 @@ const OurServices: React.FC<OurServicesProps> = () => {
               value={index.toString()}
               key={index}
             >
-              <AccordionTrigger>{data.label}</AccordionTrigger>
-              {data.items.map((item, index) => (
-                <>
-                  <AccordionContent>{`${index + 1}. ${item.item}`}</AccordionContent>
-                </>
-              ))}
+              <AccordionTrigger>
+                <strong>{data.label}</strong>
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="ml-4 list-disc">
+                  {data.items.map((item, index) => (
+                    <li key={index}>{item.item}</li>
+                  ))}
+                </ul>
+              </AccordionContent>
             </AccordionItem>
           </>
         ))}

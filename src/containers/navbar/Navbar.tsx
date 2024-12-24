@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { links as items } from "./data";
 import NavLink from "@/components/navLink";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavbarProps {}
 
@@ -44,7 +45,12 @@ const Navbar: React.FC<NavbarProps> = () => {
           href={"/"}
           className="text-white no-underline"
         >
-          Logo
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`}
+            alt="logo"
+            width={60}
+            height={40}
+          />
         </Link>
 
         {/* Desktop Menu */}

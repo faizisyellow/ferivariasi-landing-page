@@ -6,21 +6,17 @@ interface AboutUsProps {}
 
 const AboutUs: React.FC<AboutUsProps> = () => {
   return (
-    <Box title="Tentang Kami" id="TentangKami">
+    <Box
+      title="Tentang Kami"
+      id="TentangKami"
+    >
       <div className="flex w-full justify-center gap-x-8 flex-wrap sm:flex-nowrap">
-        <p id="about" className="w-full">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minus
-          voluptate earum eaque dolore voluptas cumque iure facere rem aliquid,
-          magnam nihil omnis quis laboriosam incidunt debitis harum! Nostrum, at
-          cumque eaque fugit qui et mollitia consequuntur minus pariatur a
-          doloribus totam omnis molestiae quisquam commodi atque. Esse quas
-          recusandae blanditiis, nisi libero dolores reprehenderit praesentium
-          deleniti vel mollitia magnam accusamus possimus eum hic eaque id
-          laudantium optio, explicabo voluptates impedit ipsam ipsum incidunt
-          pariatur. Voluptas iste odio voluptate mollitia consequatur, numquam
-          sequi, illo sed, cupiditate iusto qui similique! Possimus
-          necessitatibus maxime consequatur soluta, quo ipsam ea nemo quam.
-          Perspiciatis?
+        <p
+          id="about"
+          className="w-full text-xl"
+        >
+          Kami menyediakan layanan pemasangan kaca film untuk kendaraan dan gedung, serta layanan tambahan seperti pemasangan alarm dan power window. Kami bertujuan memberikan perlindungan maksimal, kenyamanan, dan tampilan elegan. Dengan
+          berbagai pilihan brand berkualitas, baik premium maupun standar, kami siap memenuhi kebutuhan Anda dalam meningkatkan keamanan, privasi, dan efisiensi energi.
         </p>
 
         {/* The image should have w/h when in mobile */}

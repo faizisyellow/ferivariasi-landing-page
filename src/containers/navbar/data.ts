@@ -17,7 +17,7 @@ export const links = [
   {
     id: 4,
     label: "Hubungi Admin",
-    hash: "#link",
+    hash: "https://api.whatsapp.com/send?phone=6285102388273",
     isCta: true,
   },
 ];
