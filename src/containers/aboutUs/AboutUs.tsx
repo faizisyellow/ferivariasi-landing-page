@@ -22,7 +22,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
         {/* The image should have w/h when in mobile */}
         <div className="relative w-full h-96">
           <Image
-            src="/about.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/about.png`}
             alt="About"
             layout="fill"
             objectFit="cover"
