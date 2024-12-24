@@ -15,8 +15,8 @@ const AboutUs: React.FC<AboutUsProps> = () => {
           id="about"
           className="w-full text-xl"
         >
-          Kami menyediakan layanan pemasangan kaca film untuk kendaraan dan gedung, serta layanan tambahan seperti pemasangan alarm dan power window. Kami bertujuan memberikan perlindungan maksimal, kenyamanan, dan tampilan elegan. Dengan
-          berbagai pilihan brand berkualitas, baik premium maupun standar, kami siap memenuhi kebutuhan Anda dalam meningkatkan keamanan, privasi, dan efisiensi energi.
+          Kami menyediakan pemasangan kaca film untuk kendaraan dan gedung, serta layanan tambahan seperti alarm dan power window. Dengan pilihan brand berkualitas, baik premium maupun standar, kami berkomitmen memberikan perlindungan
+          maksimal, kenyamanan, dan efisiensi energi.
         </p>
 
         {/* The image should have w/h when in mobile */}
