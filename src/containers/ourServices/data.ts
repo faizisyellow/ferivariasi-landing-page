@@ -1,7 +1,7 @@
 export const data = [
   {
     label: "Premium (100% Original)",
-    items: [{ item: "3M BB BC" }, { item: "Spectrum" }, { item: "Cartech: Carbon, Black, Brown, Green" }, { item: "Ilumi UV 400" }, { item: "Master Peace" }, { item: "Ice Berg" }],
+    items: [{ item: "3M BB BC" }, { item: "Cartech: Carbon, Black, Brown, Green" }, { item: "Ilumi UV 400" }, { item: "Master Peace" }, { item: "Ice Berg" }],
   },
   {
     label: "Standard",

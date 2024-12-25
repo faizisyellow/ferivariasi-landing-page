@@ -32,6 +32,11 @@ const Navbar: React.FC<NavbarProps> = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
 
+  const overlayVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+  };
+
   return (
     <motion.nav
       id="navbar"
@@ -46,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           className="text-white no-underline"
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`}
+            src={"https://res.cloudinary.com/dllk4fyv8/image/upload/v1735127707/logo_bhenjo.png"}
             alt="logo"
             width={60}
             height={40}
@@ -74,24 +79,36 @@ const Navbar: React.FC<NavbarProps> = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu with Overlay */}
       {isOpen && (
-        <motion.div
-          className="fixed inset-0 sm:hidden bg-primary pt-20"
-          initial="hidden"
-          animate="visible"
-          variants={menuVariants}
-        >
-          <ul className="flex flex-col items-center gap-6 pt-8">
-            {items.map((link) => (
-              <NavLink
-                key={link.id}
-                items={link}
-                onOpen={setIsOpen}
-              />
-            ))}
-          </ul>
-        </motion.div>
+        <>
+          {/* Overlay */}
+          <motion.div
+            className="fixed inset-0 bg-black/50 sm:hidden"
+            initial="hidden"
+            animate="visible"
+            variants={overlayVariants}
+            onClick={() => setIsOpen(false)}
+          />
+
+          {/* Menu */}
+          <motion.div
+            className="fixed right-0 top-0 h-full w-[350px] bg-primary pt-20 sm:hidden"
+            initial="hidden"
+            animate="visible"
+            variants={menuVariants}
+          >
+            <ul className="flex flex-col items-center gap-6 pt-8">
+              {items.map((link) => (
+                <NavLink
+                  key={link.id}
+                  items={link}
+                  onOpen={setIsOpen}
+                />
+              ))}
+            </ul>
+          </motion.div>
+        </>
       )}
     </motion.nav>
   );

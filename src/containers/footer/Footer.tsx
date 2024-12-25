@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = () => {
 
         <div className="mt-6 flex flex-col sm:flex-row sm:justify-between gap-y-4 sm:items-center">
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`}
+            src={"https://res.cloudinary.com/dllk4fyv8/image/upload/v1735127707/logo_bhenjo.png"}
             alt="logo"
             width={60}
             height={40}

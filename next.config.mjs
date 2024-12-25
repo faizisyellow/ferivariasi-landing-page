@@ -4,13 +4,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "/ferivariasi-landing-page",
 };
 
 export default nextConfig;

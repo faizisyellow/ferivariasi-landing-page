@@ -6,7 +6,7 @@ export const links = [
   },
   {
     id: 2,
-    label: "Layanan",
+    label: "Layanan Kami",
     hash: "#LayananKami",
   },
   {
