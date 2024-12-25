@@ -93,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
           {/* Menu */}
           <motion.div
-            className="fixed right-0 top-0 h-full w-[350px] bg-primary pt-20 sm:hidden"
+            className="fixed right-0 top-0 h-full w-[250px] bg-primary pt-20 sm:hidden"
             initial="hidden"
             animate="visible"
             variants={menuVariants}
